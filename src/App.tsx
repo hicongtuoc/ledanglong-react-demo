@@ -1,11 +1,10 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { AppBar, Box, Button, Grid, Paper, Tab } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { AppBar, Grid, Paper, Tab } from "@mui/material";
+import React, { useState } from "react";
+import HeaderApp from "./components/headerApp";
 import { InfoCampaign } from "./components/InfoCampaign/InfoCampaign";
 import { SubCampaigns } from "./components/SubCampaigns";
 import CampaignProvider from "./contexts/campaign/CampaignProvider";
-import useCampaign from "./hooks/useCampaign";
-import HeaderApp from "./components/headerApp";
 
 enum TabValue {
   INFO = "info",
@@ -15,7 +14,10 @@ enum TabValue {
 function App() {
   const [tabValue, setTabValue] = useState<TabValue>(TabValue.INFO);
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: TabValue) => {
+  const handleTabChange = (
+    _event: React.SyntheticEvent,
+    newValue: TabValue
+  ) => {
     setTabValue(newValue);
   };
 

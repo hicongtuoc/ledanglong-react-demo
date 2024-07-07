@@ -1,15 +1,6 @@
 import { Add as AddIcon } from "@mui/icons-material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import {
-  Box,
-  Card,
-  CardContent,
-  CardHeader,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
-import { useEffect, useMemo, useState } from "react";
+import { Box, Grid, IconButton } from "@mui/material";
+import { useEffect, useState } from "react";
 import useCampaign from "../../hooks/useCampaign";
 import { ISubCampaigns } from "../../types";
 import { InfoSubCampaigns } from "./InfoSubCampaigns";

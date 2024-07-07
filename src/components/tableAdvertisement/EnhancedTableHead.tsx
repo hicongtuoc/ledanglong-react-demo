@@ -40,10 +40,16 @@ export function EnhancedTableHead(props: EnhancedTableHeadProps) {
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={(event) => onSelectAllClick(event.target.checked)}
             inputProps={{ "aria-label": "select all desserts" }}
+            sx={{ "&.Mui-checked": { color: "#3f51b5" } }}
           />
         </TableCell>
         {numSelected ? (
-          <TableCell colSpan={2}>
+          <TableCell
+            colSpan={2}
+            sx={{
+              padding: "12px",
+            }}
+          >
             <div onClick={handleDelete}>
               <IconButton size="small" title="Xóa">
                 <DeleteIcon fontSize="small" />
@@ -66,6 +72,10 @@ export function EnhancedTableHead(props: EnhancedTableHeadProps) {
             <Button
               onClick={() => addAdvertisement(subCampaignId)}
               startIcon={<AddIcon />}
+              sx={{
+                border: "1px solid #3f51b5",
+                color: "#3f51b5",
+              }}
             >
               Thêm
             </Button>

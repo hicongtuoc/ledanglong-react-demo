@@ -67,7 +67,7 @@ export function InfoSubCampaigns(props: IInFoSubCampaignsProps) {
                       subCampaignId: props.selectedSubCampaign.id,
                       key: "status",
                       value: !props.selectedSubCampaign?.status,
-                    } as any)
+                    })
                   }
                   sx={{ "&.Mui-checked": { color: "#3f51b5" } }}
                 />

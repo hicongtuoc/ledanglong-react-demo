@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createContext } from "react";
 import {
   ICampaignInfo,
@@ -34,26 +35,26 @@ const CampaignContext = createContext({
     subCampaigns: [SUB_CAMPAIGNS_DEFAULT],
   },
   addSubCampaign: () => {},
-  addAdvertisement: (subCampaignId: number) => {},
+  addAdvertisement: (_subCampaignId: number) => {},
   updateInformation: (
-    key: keyof Pick<ICampaignInfo, "name" | "describe">,
-    value: string
+    _key: keyof Pick<ICampaignInfo, "name" | "describe">,
+    _value: string
   ) => {},
   updateInfoSubCampaign: (
-    args: TUpdateSubCampaignArgs<"name"> | TUpdateSubCampaignArgs<"status">
+    _args: TUpdateSubCampaignArgs<"name"> | TUpdateSubCampaignArgs<"status">
   ) => {},
   updateAdvertisement: (
-    args:
+    _args:
       | TUpdateAdvertisementArgs<"name">
       | TUpdateAdvertisementArgs<"quantity">
   ) => {},
   deleteAdvertisement: (
-    subCampaignId: number,
-    listIdAdvertisement: number[]
+    _subCampaignId: number,
+    _listIdAdvertisement: number[]
   ) => {},
 
   isCheckValid: false,
-  updateIsCheckValid: (value: boolean) => {},
+  updateIsCheckValid: (_value: boolean) => {},
 });
 
 export default CampaignContext;

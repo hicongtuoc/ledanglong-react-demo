@@ -21,10 +21,11 @@ export function ItemSubCampaign(props: ItemSubCampaignProps) {
   }, [selectedSubCampaign]);
 
   const handleColor = useMemo(() => {
+    const numAds = campaign.ads.length;
     const quantityError = campaign.ads.some((item) => {
       return item.quantity < 1 || !item.name;
     });
-    return quantityError && isCheckValid ? "red" : "inherit";
+    return (quantityError || !numAds) && isCheckValid ? "red" : "inherit";
   }, [campaign.ads, selectedSubCampaign, isCheckValid]);
 
   return (

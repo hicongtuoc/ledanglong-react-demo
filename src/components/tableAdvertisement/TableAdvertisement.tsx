@@ -30,9 +30,10 @@ export function TableAdvertisement(props: ITableAdvertisementProps) {
   const [selected, setSelected] = useState<number[]>([]);
 
   const handleSelectAllClick = (value: boolean) => {
+    let newSelecteds: number[] = [];
     switch (value) {
       case true:
-        const newSelecteds = adsList.map((n) => n.id);
+        newSelecteds = adsList.map((n) => n.id);
         setSelected(newSelecteds);
         break;
       case false:
@@ -108,6 +109,7 @@ export function TableAdvertisement(props: ITableAdvertisementProps) {
                   checked={isItemSelected}
                   inputProps={{ "aria-labelledby": labelId }}
                   onClick={() => handleClick(row.id)}
+                  sx={{ "&.Mui-checked": { color: "#3f51b5" } }}
                 />
               </TableCell>
               <TableCell sx={{ pt: 1, pb: 1 }}>

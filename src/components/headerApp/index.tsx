@@ -1,6 +1,7 @@
 import { Box, Button, Grid } from "@mui/material";
 import useCampaign from "../../hooks/useCampaign";
 import { ICampaign } from "../../types";
+import { removeId } from "../../utils";
 
 export default function HeaderApp() {
   const { informationCampaign, subCampaigns, updateIsCheckValid } =
@@ -18,6 +19,12 @@ export default function HeaderApp() {
     campaign.subCampaigns.forEach((subCampaign) => {
       if (!subCampaign.name.trim()) {
         errors.push(`SubCampaign id ${subCampaign.id} name cannot be empty.`);
+      }
+
+      if (subCampaign.ads.length === 0) {
+        errors.push(
+          `SubCampaign id ${subCampaign.id} must have at least 1 ad.`
+        );
       }
 
       // Check ads in each subCampaign
@@ -56,7 +63,9 @@ export default function HeaderApp() {
       return;
     }
 
-    window.alert(`Thêm thành công chiến dịch\n${JSON.stringify(valueSubmit)}`);
+    window.alert(
+      `Thêm thành công chiến dịch\n${JSON.stringify(removeId(valueSubmit))}`
+    );
   };
   return (
     <Grid container sx={{ pt: 2 }}>

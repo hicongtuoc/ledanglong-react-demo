@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from "react";
-import CampaignContext, {
-  INFORMATION_DEFAULT,
-  SUB_CAMPAIGNS_DEFAULT,
-} from "./CampaignContext";
+import React, { useState } from "react";
 import {
   ICampaign,
   ICampaignInfo,
@@ -14,6 +10,10 @@ import {
   generateAdvertisementName,
   generateSubCampaignName,
 } from "../../utils";
+import CampaignContext, {
+  INFORMATION_DEFAULT,
+  SUB_CAMPAIGNS_DEFAULT,
+} from "./CampaignContext";
 
 interface CampaignProviderProps {
   children: React.ReactNode;
